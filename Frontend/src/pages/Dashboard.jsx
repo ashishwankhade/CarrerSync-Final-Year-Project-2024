@@ -21,7 +21,7 @@ import DashboardCard12 from '../partials/dashboard/DashboardCard12';
 import DashboardCard13 from '../partials/dashboard/DashboardCard13';
 import Banner from '../partials/Banner';
 
-import RegistrationForm from './RegistrationForm/RegistrationForm';
+import RegistrationForm from './RegistrationForm/LoginForm';
 
 function Dashboard() {
 

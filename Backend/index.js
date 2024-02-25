@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 // Import body-parser to parse request bodies
 const bodyParser = require('body-parser');
 // Import routes
-const yourRoutes = require('./routes/yourRoutes');
+// const yourRoutes = require('./routes/yourRoutes');
 
 // Initialize express app
 const app = express();

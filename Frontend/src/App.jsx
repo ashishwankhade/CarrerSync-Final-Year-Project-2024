@@ -11,6 +11,8 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
+import LoginForm from './pages/RegistrationForm/LoginForm';
+import HomePage from '../src/pages/HomePage/HomePage'
 
 function App() {
 
@@ -25,7 +27,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/" element={<HomePage/>}  />
+        <Route exact path="/HomePage/Login" element={<LoginForm/>} />
+        <Route exact path="/Dashboard" element={<Dashboard/>}/>
       </Routes>
     </>
   );
