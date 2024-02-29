@@ -10,7 +10,7 @@ function Homepage() {
   const el = React.useRef(null);
   React.useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: [' Career Opportunities.', ' Professional Ventures.' ,'  Industry trends.'],
+      strings: [' Career Opportunities.', ' Professional Ventures.' ,'  Industry Trends.'],
       typeSpeed: 60,
       loop:true,
       backSpeed: 60,

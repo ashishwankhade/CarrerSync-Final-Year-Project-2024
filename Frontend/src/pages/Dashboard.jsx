@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
+// import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import Sidebar from '../partials/Sidebar';
+// import routes from '../../Routes/index.js'
+
+import Sidebar from '../partials/Sidebar'; 
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import DashboardAvatars from '../partials/dashboard/DashboardAvatars';
@@ -20,8 +23,9 @@ import DashboardCard11 from '../partials/dashboard/DashboardCard11';
 import DashboardCard12 from '../partials/dashboard/DashboardCard12';
 import DashboardCard13 from '../partials/dashboard/DashboardCard13';
 import Banner from '../partials/Banner';
+import JobPost from '../pages/JobPost/JobPost';
 
-import RegistrationForm from './RegistrationForm/LoginForm';
+import RegistrationForm from './LoginForm/LoginForm';
 
 function Dashboard() {
 
@@ -40,19 +44,19 @@ function Dashboard() {
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
-          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+          {/* <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto"> */}
 
             {/* Welcome banner */}
-            <WelcomeBanner />
+            {/* <WelcomeBanner /> */}
 
             {/* Dashboard actions */}
-            <div className="sm:flex sm:justify-between sm:items-center mb-8">
+            {/* <div className="sm:flex sm:justify-between sm:items-center mb-8"> */}
 
               {/* Left: Avatars */}
               {/* <DashboardAvatars /> */}
 
               {/* Right: Actions */}
-              <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
+              {/* <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2"> */}
                 {/* Filter button */}
                 {/* <FilterButton /> */}
                 {/* Datepicker built with flatpickr */}
@@ -64,17 +68,17 @@ function Dashboard() {
                     </svg>
                     <span className="hidden xs:block ml-2">Add view</span>
                 </button>                 */}
-              </div>
+              {/* </div> */}
 
-            </div>
+            {/* </div> */}
 
             {/* Cards */}
-            <div className="grid grid-cols-12 gap-6">
+            {/* <div className="grid grid-cols-12 gap-6"> */}
 
               {/* Line chart (Acme Plus) */}
-              <TimeAndDate/>
+              {/* <TimeAndDate/> */}
               {/* Line chart (Acme Advanced) */}
-              <DashboardCard02 />
+              {/* <DashboardCard02 /> */}
 
               
              
@@ -103,11 +107,31 @@ function Dashboard() {
 
 
               
-            </div>
+            {/* </div> */}
        
+            
+          {/* </div> */}
 
-          </div>
-          <RegistrationForm/>
+          {/* <h1>Saurabh</h1> */}
+
+          {/* <Suspense >
+            <Switch>
+              {routes.map((route, i) => {
+                return route.component ? (
+                  <Route
+                    key={i}
+                    exact={true}
+                    path={`/app${route.path}`}
+                    render={(props) => <route.component {...props} />}
+                  />
+                ) : null
+              })}
+              <Redirect exact from="/app" to="/app/dashboard" />
+              <Route component={Page404} />
+            </Switch> */}
+          {/* </Suspense> */}
+          <JobPost/>
+        
         </main>
 
         <Banner />

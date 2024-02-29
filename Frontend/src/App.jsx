@@ -11,8 +11,11 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
-import LoginForm from './pages/RegistrationForm/LoginForm';
-import HomePage from '../src/pages/HomePage/HomePage'
+import LoginForm from './pages/LoginForm/LoginForm';
+import HomePage from '../src/pages/HomePage/HomePage';
+import JobPost from '../src/pages/JobPost/JobPost'
+import JobGrid from './pages/JobGrid/JobGrid';
+
 
 function App() {
 
@@ -28,8 +31,15 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<HomePage/>}  />
-        <Route exact path="/HomePage/Login" element={<LoginForm/>} />
+        <Route exact path="/LoginPage" element={<LoginForm/>} />
         <Route exact path="/Dashboard" element={<Dashboard/>}/>
+        <Route exact path="/job/job-post" element={<JobPost/>}/>
+        <Route exact path="/JobGrid" element={<JobGrid/>}/>
+
+        {/* <Route path="/app" component={Layout} /> */}
+
+
+        
       </Routes>
     </>
   );

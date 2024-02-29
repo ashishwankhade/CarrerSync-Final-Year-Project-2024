@@ -23,7 +23,7 @@ function RegistrationForm() {
       <div className="mb-5 ">
 
         <h1 className="text-3xl font-bold mb-4 text-black dark:text-indigo-600 text-center ">
-          Welcome Back 👋
+        Welcome Back 👋
         </h1>
         <label
           htmlFor="email"
@@ -73,7 +73,7 @@ function RegistrationForm() {
           id="repeat-password"
           className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base"
           required
-          placeholder="Confirm password"
+          placeholder="Enter Your password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
