@@ -162,7 +162,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 'block transition duration-150 truncate ' + (isActive ? 'text-indigo-500 ' : 'text-white')
                               }>
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              Vision Vault
+                              Home
                             </span>
                             </NavLink>
                           </div>
