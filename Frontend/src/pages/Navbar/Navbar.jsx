@@ -13,7 +13,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-0 md:gap-4 md:order-2 space-x-3 md:space-x-0 ">
           <ThemeToggle />
-        <Link to='/LoginPage'>  <button
+        <Link to='/login'>  <button
             type="button"
             className="text-white bg-[#4F46E5] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-6 md:px-8 py-2 text-center dark:bg-[#4F46E5]  dark:focus:ring-blue-800 ml-2"
           >

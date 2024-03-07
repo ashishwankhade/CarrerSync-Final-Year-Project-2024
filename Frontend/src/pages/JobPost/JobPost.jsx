@@ -1,15 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 
-function UpdateProductForm() {
+function JobPost() {
+  // State variables to store form data
+  const [formData, setFormData] = useState({
+    companyName: "",
+    aboutCompany: "",
+    websiteLink: "",
+    jobTitle: "",
+    jobDescription: "",
+    jobPosition: "",
+    jobType: "",
+    salary: "",
+    jobLocation: "",
+    qualification: "",
+    skills: "",
+    experience: "",
+    selectionProcess: "",
+    termsAndConditions: "",
+    registrationLink: "",
+    registrationDeadline: "",
+  });
+
+  // Function to handle input changes and update form data
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Function to handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Do something with formData, like sending it to a server
+    console.log(formData);
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="max-w-3xl px-4 py-8 md:mx-12 mx-2 lg:py-8">
+      <div className="max-w-6xl px-4 py-8 md:mx-12 mx-2 lg:py-8">
         <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
           Create a New Job
         </h2>
-  
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2 className="  text-xl font-semibold mb-4 text-[#4F46E5]">
             Company Details
           </h2>
@@ -22,8 +57,11 @@ function UpdateProductForm() {
                 Company Name
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="companyName"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Company Name"
                 required
@@ -36,9 +74,12 @@ function UpdateProductForm() {
               </label>
 
               <textarea
-                id="message"
+                id="aboutCompany"
+                name="aboutCompany"
+                value={formData.aboutCompany}
+                onChange={handleInputChange}
                 rows="4"
-                class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-md  py-3 px-5 dark:shadow-sm-light text-base mb-4"
+                className="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-md py-3 px-5 dark:shadow-sm-light text-base mb-4"
                 placeholder="Enter Brief About Company"
               ></textarea>
 
@@ -62,10 +103,13 @@ function UpdateProductForm() {
                 Website Link
               </label>
               <input
-                type="email"
-                id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-8"
-                placeholder="Enter Website Link of Company"
+                type="text"
+                id="websiteLink"
+                name="websiteLink"
+                value={formData.websiteLink}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
+                placeholder="Enter Website Link"
                 required
               />
 
@@ -80,10 +124,13 @@ function UpdateProductForm() {
                 Job Title
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="jobTitle"
+                name="jobTitle"
+                value={formData.jobTitle}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
-                placeholder="Enter Job Title Here"
+                placeholder="Enter Job Title"
                 required
               />
               <label
@@ -94,9 +141,14 @@ function UpdateProductForm() {
               </label>
 
               <textarea
-                id="message"
-                rows="4"
-                class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-md  py-3 px-5 dark:shadow-sm-light text-base mb-4"
+                type="text"
+                id="jobDescription"
+                name="jobDescription"
+                value={formData.jobDescription}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
+                required
+                rows={4}
                 placeholder="Enter Job Description"
               ></textarea>
 
@@ -107,10 +159,13 @@ function UpdateProductForm() {
                 Job Position
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="jobPosition"
+                name="jobPosition"
+                value={formData.jobPosition}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
-                placeholder="Enter Job Title Here"
+                placeholder="Enter Job Position"
                 required
               />
 
@@ -139,11 +194,14 @@ function UpdateProductForm() {
                 Salary
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="salary"
+                name="salary"
+                value={formData.salary}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
-                placeholder="Enter Salary Range or Fixed Value"
                 required
+                placeholder="Enter Salary Range or Fixed Value"
               />
 
               <label
@@ -154,10 +212,13 @@ function UpdateProductForm() {
               </label>
               <input
                 type="text"
-                id="email"
+                id="jobLocation"
+                name="jobLocation"
+                value={formData.jobLocation}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
-                placeholder="Enter Job Location"
                 required
+                placeholder="Enter Job Location"
               />
               <label
                 htmlFor="name"
@@ -167,10 +228,13 @@ function UpdateProductForm() {
               </label>
               <input
                 type="text"
-                id="email"
+                id="qualification"
+                name="qualification"
+                value={formData.qualification}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
-                placeholder="Enter Qualification"
                 required
+                placeholder="Enter Qualification"
               />
               <label
                 htmlFor="name"
@@ -180,7 +244,10 @@ function UpdateProductForm() {
               </label>
               <input
                 type="text"
-                id="email"
+                id="skills"
+                name="skills"
+                value={formData.skills}
+                onChange={handleInputChange}
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="HTML , CSS ,JS ,JAVA ,C etc"
                 required
@@ -189,12 +256,15 @@ function UpdateProductForm() {
                 htmlFor="name"
                 className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
               >
-                Experince
+                Experience
               </label>
               <input
                 type="text"
-                id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-8"
+                id="experience"
+                name="experience"
+                value={formData.experience}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Experince  eg. Fresher"
                 required
               />
@@ -204,10 +274,14 @@ function UpdateProductForm() {
               </h2>
 
               <textarea
-                id="message"
-                rows="4"
-                class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-md  py-3 px-5 dark:shadow-sm-light text-base mb-4"
+                type="text"
+                id="selectionProcess"
+                name="selectionProcess"
+                value={formData.selectionProcess}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Brief About Selection Process"
+                rows={4}
               ></textarea>
 
               <h2 className="  text-xl font-semibold mb-4 text-[#4F46E5]">
@@ -215,52 +289,59 @@ function UpdateProductForm() {
               </h2>
 
               <textarea
-                id="message"
-                rows="4"
-                class="block p-2.5 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 text-md  py-3 px-5 dark:shadow-sm-light text-base mb-4"
+                type="text"
+                id="termsAndConditions"
+                name="termsAndConditions"
+                value={formData.termsAndConditions}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Terms And Conditions"
+                rows={4}
               ></textarea>
 
-<label
+              <label
                 htmlFor="name"
                 className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
               >
-             Registration Link:
+                Registration Link:
               </label>
               <input
                 type="text"
-                id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-8"
+                id="registrationLink"
+                name="registrationLink"
+                value={formData.registrationLink}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Registration Link"
                 required
               />
 
-            <label
+              <label
                 htmlFor="name"
                 className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
               >
-             Deadline for Registration
+                Deadline for Registration
               </label>
               <input
                 type="text"
-                id="email"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-8"
+                id="registrationDeadline"
+                name="registrationDeadline"
+                value={formData.registrationDeadline}
+                onChange={handleInputChange}
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base mb-4"
                 placeholder="Enter Deadline for Registration"
                 required
               />
-
             </div>
-
             {/* Additional form fields */}
           </div>
           <div className="flex items-center space-x-4">
-          <button
-        type="submit"
-        className="w-full md:w-1/2 text-white bg-[#4F46E5] focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-3 text-center dark:bg-[#4F46E5]  dark:focus:ring-blue-800 mx-auto"
-      >
-        Create  new Job
-      </button>
-           
+            <button
+              type="submit"
+              className="w-full md:w-1/2 text-white bg-[#4F46E5] focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-3 text-center dark:bg-[#4F46E5]  dark:focus:ring-blue-800 mx-auto"
+            >
+              Create new Job
+            </button>
           </div>
         </form>
       </div>
@@ -268,4 +349,4 @@ function UpdateProductForm() {
   );
 }
 
-export default UpdateProductForm;
+export default JobPost;

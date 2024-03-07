@@ -1,5 +1,6 @@
 // Import express
 const express = require('express');
+const cors = require("cors");
 // Import mongoose
 const mongoose = require('mongoose');
 const { MongoClient, ServerApiVersion } = require('mongodb');
@@ -12,9 +13,35 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const app = express();
 
 
-app.get('/',(req,res)=>{
-  res.send('Hello World');
+
+
+app.use(cors({
+  origin : ["http://127.0.0.1:5173" ]
+}))
+
+app.get('/posts',(req,res)=>{
+
+  //Fetch Posts from Database
+  const posts = [
+    {
+      id : 1,
+      title : "title 1",
+    },
+    {
+      id : 2,
+      title : "title 2",
+    }
+  ]
+
+  
+  res.json(posts);
 })
+
+
+app.get('/message',(req,res)=>{
+  res.send('Hello World Message');
+})
+
 
 // Use body-parser middleware to parse JSON bodies
 // app.use(bodyParser.json());

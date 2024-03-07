@@ -15,6 +15,7 @@ import LoginForm from './pages/LoginForm/LoginForm';
 import HomePage from '../src/pages/HomePage/HomePage';
 import JobPost from '../src/pages/JobPost/JobPost'
 import JobGrid from './pages/JobGrid/JobGrid';
+import {DashboardHomePage} from "../src/pages/HomePage/DashboardHomePage";
 
 
 function App() {
@@ -31,10 +32,12 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<HomePage/>}  />
-        <Route exact path="/LoginPage" element={<LoginForm/>} />
-        <Route exact path="/Dashboard" element={<Dashboard/>}/>
-        <Route exact path="/job/job-post" element={<JobPost/>}/>
-        <Route exact path="/JobGrid" element={<JobGrid/>}/>
+        <Route exact path="/login" element={<LoginForm/>} />
+        <Route exact path="/dashboard" element={<Dashboard/>}> 
+          <Route exact path='/dashboard/visionvoult' element={<DashboardHomePage/>}/>
+          <Route exact path="/dashboard/job-post" element={<JobPost/>}/>
+          <Route exact path="/dashboard/activejobs" element={<JobGrid/>}/>
+        </Route>
 
         {/* <Route path="/app" component={Layout} /> */}
 

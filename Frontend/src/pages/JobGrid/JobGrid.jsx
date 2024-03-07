@@ -1,7 +1,139 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function JobGrid() {
   const members = [
+    {
+      company_icon: (
+        <svg
+          className="w-8 h-8"
+          viewBox="0 0 35 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#clip0_715_1824)">
+            <path
+              d="M34.6588 17.9031C34.6588 16.7135 34.5623 15.5175 34.3565 14.3472H17.85V21.0861H27.3025C26.9103 23.2595 25.6499 25.1822 23.8044 26.4039V30.7765H29.4438C32.7554 27.7286 34.6588 23.2274 34.6588 17.9031Z"
+              fill="#4285F4"
+            />
+            <path
+              d="M17.85 35.0011C22.5698 35.0011 26.5502 33.4514 29.4502 30.7764L23.8109 26.4038C22.2419 27.4712 20.2163 28.0757 17.8564 28.0757C13.2909 28.0757 9.41989 24.9956 8.03095 20.8545H2.21155V25.3621C5.18234 31.2715 11.2332 35.0011 17.85 35.0011Z"
+              fill="#34A853"
+            />
+            <path
+              d="M8.02451 20.8547C7.29146 18.6813 7.29146 16.3278 8.02451 14.1544V9.64673H2.21154C-0.270546 14.5916 -0.270546 20.4174 2.21154 25.3623L8.02451 20.8547Z"
+              fill="#FBBC04"
+            />
+            <path
+              d="M17.85 6.92659C20.3449 6.88801 22.7563 7.82683 24.5632 9.55014L29.5595 4.55382C26.3958 1.58303 22.1968 -0.0502629 17.85 0.0011793C11.2332 0.0011793 5.18234 3.73074 2.21155 9.6466L8.02452 14.1542C9.40703 10.0067 13.2845 6.92659 17.85 6.92659Z"
+              fill="#EA4335"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_715_1824">
+              <rect width="35" height="35" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      ),
+      company_name: "Google",
+      job_title: "Full stack engineer",
+      job_description:
+        "We are seeking a highly skilled and experienced Full Stack Developer to join our dynamic team. As a Full Stack Developer, you will be responsible for developing and maintaining the overall architecture of our web applications. ",
+      job_type: "Full-time",
+      location: "Remotely",
+      date: "22 March 2024",
+      salary: "20k-30k",
+      path: "javascript:void(0)",
+    },
+
+    {
+      company_icon: (
+        <svg
+          className="w-8 h-8"
+          viewBox="0 0 35 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#clip0_715_1824)">
+            <path
+              d="M34.6588 17.9031C34.6588 16.7135 34.5623 15.5175 34.3565 14.3472H17.85V21.0861H27.3025C26.9103 23.2595 25.6499 25.1822 23.8044 26.4039V30.7765H29.4438C32.7554 27.7286 34.6588 23.2274 34.6588 17.9031Z"
+              fill="#4285F4"
+            />
+            <path
+              d="M17.85 35.0011C22.5698 35.0011 26.5502 33.4514 29.4502 30.7764L23.8109 26.4038C22.2419 27.4712 20.2163 28.0757 17.8564 28.0757C13.2909 28.0757 9.41989 24.9956 8.03095 20.8545H2.21155V25.3621C5.18234 31.2715 11.2332 35.0011 17.85 35.0011Z"
+              fill="#34A853"
+            />
+            <path
+              d="M8.02451 20.8547C7.29146 18.6813 7.29146 16.3278 8.02451 14.1544V9.64673H2.21154C-0.270546 14.5916 -0.270546 20.4174 2.21154 25.3623L8.02451 20.8547Z"
+              fill="#FBBC04"
+            />
+            <path
+              d="M17.85 6.92659C20.3449 6.88801 22.7563 7.82683 24.5632 9.55014L29.5595 4.55382C26.3958 1.58303 22.1968 -0.0502629 17.85 0.0011793C11.2332 0.0011793 5.18234 3.73074 2.21155 9.6466L8.02452 14.1542C9.40703 10.0067 13.2845 6.92659 17.85 6.92659Z"
+              fill="#EA4335"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_715_1824">
+              <rect width="35" height="35" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      ),
+      company_name: "Google",
+      job_title: "Full stack engineer",
+      job_description:
+        "We are seeking a highly skilled and experienced Full Stack Developer to join our dynamic team. As a Full Stack Developer, you will be responsible for developing and maintaining the overall architecture of our web applications. ",
+      job_type: "Full-time",
+      location: "Remotely",
+      date: "22 March 2024",
+      salary: "20k-30k",
+      path: "javascript:void(0)",
+    },
+
+    {
+      company_icon: (
+        <svg
+          className="w-8 h-8"
+          viewBox="0 0 35 35"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g clipPath="url(#clip0_715_1824)">
+            <path
+              d="M34.6588 17.9031C34.6588 16.7135 34.5623 15.5175 34.3565 14.3472H17.85V21.0861H27.3025C26.9103 23.2595 25.6499 25.1822 23.8044 26.4039V30.7765H29.4438C32.7554 27.7286 34.6588 23.2274 34.6588 17.9031Z"
+              fill="#4285F4"
+            />
+            <path
+              d="M17.85 35.0011C22.5698 35.0011 26.5502 33.4514 29.4502 30.7764L23.8109 26.4038C22.2419 27.4712 20.2163 28.0757 17.8564 28.0757C13.2909 28.0757 9.41989 24.9956 8.03095 20.8545H2.21155V25.3621C5.18234 31.2715 11.2332 35.0011 17.85 35.0011Z"
+              fill="#34A853"
+            />
+            <path
+              d="M8.02451 20.8547C7.29146 18.6813 7.29146 16.3278 8.02451 14.1544V9.64673H2.21154C-0.270546 14.5916 -0.270546 20.4174 2.21154 25.3623L8.02451 20.8547Z"
+              fill="#FBBC04"
+            />
+            <path
+              d="M17.85 6.92659C20.3449 6.88801 22.7563 7.82683 24.5632 9.55014L29.5595 4.55382C26.3958 1.58303 22.1968 -0.0502629 17.85 0.0011793C11.2332 0.0011793 5.18234 3.73074 2.21155 9.6466L8.02452 14.1542C9.40703 10.0067 13.2845 6.92659 17.85 6.92659Z"
+              fill="#EA4335"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_715_1824">
+              <rect width="35" height="35" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      ),
+      company_name: "Google",
+      job_title: "Full stack engineer",
+      job_description:
+        "jhdfkjafh dfkjhasjklfhkjlash ijhsfdljkskfjahajklshdf hbdfkhasdhfhsda lhdsfkljhaskjfhjkas ahdfkljashdfkhsadjf sdkfksjhfhsdafklh kjshadfkjh ojldkfjgljsdlkgj dlgfjlsdjglkjsdfg fdjglsdjfglksdj lkfjglksdjglkfsdjglkjf lfjglkfsdjglkj",
+      job_type: "Full-time",
+      location: "Remotely",
+      date: "22 March 2024",
+      salary: "20k-30k",
+      path: "javascript:void(0)",
+    },
     {
       company_icon: (
         <svg
@@ -49,13 +181,31 @@ function JobGrid() {
   ];
 
   return (
-    <section className="py-28">
-      <div className="max-w-screen-lg mx-auto px-4 md:px-8">
-        <ul className="mt-12 divide-y space-y-3">
+    <section>
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <ul className="mt-6 divide-y space-y-6">
+          <div className="flex justify-between">
+            <div>
+              <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+                Active Jobs
+              </h2>
+            </div>
+            <div>
+            <Link to='/Dashboard/job-post'>
+              <button
+                type="submit"
+                className="w-full  text-white bg-[#4F46E5] focus:ring-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-4 py-2 text-center dark:bg-[#4F46E5]  dark:focus:ring-blue-800 mx-auto"
+              >
+                Create new Job
+              </button>
+              </Link>
+            </div>
+          </div>
+
           {members.map((item, idx) => (
             <li
               key={idx}
-              className="px-5 py-5 duration-150 hover:border-white rounded-xl dark:bg-[#1E293B]  "
+              className="px-5 py-5 duration-150 border-none  rounded-xl dark:bg-[#1E293B] bg-white  "
             >
               <a href={item.path} className="space-y-3">
                 <div className="flex items-center gap-x-3 justify-between">
@@ -77,10 +227,10 @@ function JobGrid() {
                     See Details{" "}
                   </div>
                 </div>
-                <p className="text-gray-600  dark:text-white text-md ">
+                <p className="text-gray-600  dark:text-white text-md ml-2">
                   {item.job_description}
                 </p>
-                <div className="text-base dark:text-white flex items-center gap-6 flex-wrap ">
+                <div className="text-base dark:text-white flex items-center gap-6 flex-wrap ml-2">
                   <span className="flex items-center gap-2">
                     <svg
                       className="w-5 h-5 text-gray-500"
