@@ -38,7 +38,7 @@ app.get('/posts',(req,res)=>{
 })
 
 
-app.get('/message',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send('Hello World Message');
 })
 

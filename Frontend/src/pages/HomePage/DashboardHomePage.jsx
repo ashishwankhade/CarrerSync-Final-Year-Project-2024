@@ -5,7 +5,7 @@ import WelcomeBanner from "../../partials/dashboard/WelcomeBanner";
 
 const DashboardHomePage = () => {
 
-    // const [posts , setPosts] = React.useState(null);
+    const [posts , setPosts] = React.useState(null);
 
 
     // React.useEffect(() => {

@@ -693,9 +693,17 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 d="M6.939 15.007A5.861 5.861 0 0 1 6 11.829c0-2.937 2.167-5.376 5-5.85V0C4.85.507 0 5.614 0 11.83c0 2.695.922 5.174 2.456 7.17l4.483-3.993Z"
                               />
                             </svg>
-                            <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                              ScholarSift
-                            </span>
+                            <NavLink
+                              end
+                              to="companydesc"
+                              className={({ isActive }) =>
+                                'block transition duration-150 truncate ' + (isActive ? 'text-indigo-500' : 'text-white')
+                              }
+                            >
+                              <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                               CompanyDesc
+                              </span>
+                            </NavLink>
                           </div>
                           {/* Icon */}
                             {/* <div className="flex shrink-0 ml-2">
@@ -890,7 +898,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('calendar') && 'bg-slate-900'}`}>
                 <NavLink
                   end
-                  to="/Login"
+                  to="schedulesphere"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes('calendar') ? 'hover:text-slate-200' : 'hover:text-white'
                   }`}

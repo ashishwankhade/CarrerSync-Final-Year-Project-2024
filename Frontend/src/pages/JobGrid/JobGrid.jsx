@@ -223,13 +223,13 @@ function JobGrid() {
                     </div>
                   </div>
 
+                  
+
                   <div className="mr-4 text-md text-indigo-600">
                     See Details{" "}
                   </div>
                 </div>
-                <p className="text-gray-600  dark:text-white text-md ml-2">
-                  {item.job_description}
-                </p>
+
                 <div className="text-base dark:text-white flex items-center gap-6 flex-wrap ml-2">
                   <span className="flex items-center gap-2">
                     <svg
@@ -303,6 +303,10 @@ function JobGrid() {
                     {item.salary}
                   </span>
                 </div>
+                <p className="text-gray-600  dark:text-white text-md ml-2">
+                  {item.job_description}
+                </p>
+   
               </a>
             </li>
           ))}
