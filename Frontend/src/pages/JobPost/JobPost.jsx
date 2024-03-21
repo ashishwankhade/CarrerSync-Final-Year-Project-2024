@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function JobPost() {
   // State variables to store form data
@@ -35,10 +38,15 @@ function JobPost() {
     e.preventDefault();
     // Do something with formData, like sending it to a server
     console.log(formData);
+    toast.success('Job created successfully!', {
+      // position: toast.POSITION.TOP_CENTER
+       position: "top-center"
+    });
   };
 
   return (
     <section className="bg-white dark:bg-gray-900">
+     <ToastContainer />
       <div className="max-w-6xl px-4 py-8 md:mx-12 mx-2 lg:py-8">
         <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
           Create a New Job

@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/dashboard/job-post" element={<JobPost/>}/>
           <Route exact path="/dashboard/activejobs" element={<JobGrid/>}/>
           <Route exact path="/dashboard/companydesc" element={<CompanyDesc/>}/>
-          <Route exact path="/dashboard/schedulesphere" element={<TableData/>}/>
+          <Route exact path="/dashboard/studentdata" element={<TableData/>}/>
         </Route>
 
         {/* <Route path="/app" component={Layout} /> */}
