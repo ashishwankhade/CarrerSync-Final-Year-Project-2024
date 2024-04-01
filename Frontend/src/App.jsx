@@ -18,6 +18,9 @@ import JobGrid from './pages/JobGrid/JobGrid';
 import {DashboardHomePage} from "../src/pages/HomePage/DashboardHomePage";
 import CompanyDesc from './pages/CompanyDesc/CompanyDesc';
 import TableData from './pages/TableData/TableData';
+import Studentinfo from './pages/StudentDashboard/Studentinfo'
+import Studentdashboard from './pages/StudentDashboard/Studentdashboard';
+import WelcomeBanner from './partials/dashboard/WelcomeBanner';
 
 
 function App() {
@@ -46,6 +49,45 @@ function App() {
 
         {/* <Route path="/app" component={Layout} /> */}
 
+
+        <Route exact path="/studentdashboard" element={<Studentdashboard />}>
+          <Route
+            exact
+            path="/studentdashboard/Studentinfo"
+            element={<Studentinfo />}
+          />
+          <Route
+            exact
+            path="/studentdashboard/activejobs"
+            element={<JobGrid />}
+          />
+          <Route
+            exact
+            path="/studentdashboard/home"
+            element={<WelcomeBanner />}
+          />
+
+          {/* <Route exact path="/dashboard/job-post" element={<JobPost />} /> */}
+          {/* <Route exact path="/dashboard/activejobs" element={<JobGrid />} /> */}
+          {/* <Route exact path="/dashboard/companydesc" element={<CompanyDesc/>}/> */}
+        </Route>
+        {/* <Route exact path="/tpodashboard" element={< Tpodashboard/>}>
+          <Route
+            exact
+            path="/tpodashboard/TeacherR"
+            element={<TeacherR />}
+          />
+          <Route
+            exact
+            path="/tpodashboard/activejobs"
+            element={<JobGrid />}
+          />
+          
+
+          {/* <Route exact path="/dashboard/job-post" element={<JobPost />} /> */}
+          {/* <Route exact path="/dashboard/activejobs" element={<JobGrid />} /> */}
+          {/* <Route exact path="/dashboard/companydesc" element={<CompanyDesc/>}/> */}
+        {/* </Route> */} 
 
 
 

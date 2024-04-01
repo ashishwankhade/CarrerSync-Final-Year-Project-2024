@@ -182,7 +182,7 @@ function JobGrid() {
 
   return (
     <section>
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
         <ul className="mt-6 divide-y space-y-6">
           <div className="flex justify-between">
             <div>

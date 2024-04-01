@@ -1,21 +1,58 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 
 function RegistrationForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [SelectedCountry, setSelectedCountry] = useState("");
+  const [role, setRole] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Here you would usually integrate your form submission logic, like calling an API.
     console.log("Form submitted", {
       email,
       password,
-      SelectedCountry,
+      role,
       termsAccepted,
     });
+
+    const formData = {
+      email,
+      password,
+      role,
+      termsAccepted
+    };
+
+    // try {
+    //   // Make a POST request to your server endpoint
+    //   const response = await axios.post('http://localhost:3000/login', formData);
+    //   console.log("Form submitted", response.data);
+    //   // Handle success response from the server
+
+    // } catch (error) {
+    //   // Handle errors
+    //   console.error('Error submitting form:', error);
+    // }
+
+   const response= await fetch('http://localhost:3000/login',{
+
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+      },
+      body:JSON.stringify({
+        email,
+        role,
+        password,
+        termsAccepted
+      })
+    })
+
+    const data = await response.json();
+
+    console.log(data);
   };
 
   return (
@@ -44,16 +81,16 @@ function RegistrationForm() {
       </div>
       <div className="mb-5">
         <label
-          htmlFor="countries"
+          htmlFor="role"
           className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
         >
           Your Role
         </label>
         <select
-          id="countries"
+          id="role"
           className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base"
-          value={SelectedCountry}
-          onChange={(e) => setSelectedCountry(e.target.value)}
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
         >
           <option value="">Choose Your Role</option>
           <option value="Student">Student</option>
@@ -63,14 +100,14 @@ function RegistrationForm() {
       </div>
       <div className="mb-5">
         <label
-          htmlFor="repeat-password"
+          htmlFor="password"
           className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
         >
           Your password
         </label>
         <input
           type="password"
-          id="repeat-password"
+          id="password"
           className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full py-3 px-5 dark:bg-[#1E293B] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light outline-transparent text-base"
           required
           placeholder="Enter Your password"

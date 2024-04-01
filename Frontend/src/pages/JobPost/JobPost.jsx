@@ -47,7 +47,7 @@ function JobPost() {
   return (
     <section className="bg-white dark:bg-gray-900">
      <ToastContainer />
-      <div className="max-w-6xl px-4 py-8 md:mx-12 mx-2 lg:py-8">
+      <div className="max-w-8xl px-4 py-8 md:mx-6 mx-2 lg:py-8">
         <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
           Create a New Job
         </h2>

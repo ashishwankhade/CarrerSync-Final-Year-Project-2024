@@ -4,23 +4,25 @@ const cors = require("cors");
 // Import mongoose
 const mongoose = require('mongoose');
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const Timepass = require('../Backend/Model/StudentData');
-const Sale =require('../Backend/Model/Sales');
-const Data = require('./Model/Student');
+const StudentData = require('../Backend/Model/StudentData');
+// const Sale =require('../Backend/Model/Sales');
+const User = require('../Backend/Model/userModel');
 // Import body-parser to parse request bodies
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 // Import routes
 // const yourRoutes = require('./routes/yourRoutes');
 
 // Initialize express app
 const app = express();
 
+app.use(cors());
+
+app.use(express.json());
 
 
-
-app.use(cors({
-  origin : ["http://127.0.0.1:5173","http://localhost:3000/"]
-}))
+// app.use(cors({
+//   origin : ["http://127.0.0.1:5173","http://localhost:3000/"]
+// }))
 
 app.get('/posts',(req,res)=>{
 
@@ -58,7 +60,7 @@ app.get('/',(req,res)=>{
 
 app.get('/Dashboard/studentdata', async (req, res) => {
   try {
-    const sales = await Sale.find(); // Simple find query without conditions
+    const sales = await StudentData.find(); // Simple find query without conditions
     console.log('Sales data:', sales);
     res.json(sales);
   } catch (error) {
@@ -81,6 +83,56 @@ app.get('/Dashboard/studentdata', async (req, res) => {
 //   }
 // });
 
+// Login Data Fetch 
+
+app.post("/login",async (req,res)=>{
+
+  const { email, role, password, termsAccepted } = req.body;
+  console.log("Received data:", { email, role, password, termsAccepted });
+
+  // try{
+  //   const userData =await User.find();
+  //   console.log(userData);
+  //   console.log("datafetched",userData);
+  //   res.json(userData);
+  // }
+  // catch (error) {
+  //   console.error('Error fetching user data:', error);
+  //   res.status(500).send(error);
+  // }
+
+  try {
+    // Here you would perform any necessary actions with the received data
+    // For example, querying the database to find a user with the provided email
+    // const userData = await User.find({ email: req.body.email });
+    // console.log("User Exist in database");
+    // console.log("UserData", userData);
+    // res.json(userData);
+
+    console.log(req.body);
+
+    // Placeholder response for testing
+    res.status(200).json({ message: "Received data successfully" });
+  } catch (error) {
+    console.error('Error processing user data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+
+
+
+  try{
+      // const userData = await User.find({ email: req.body.email });
+    // console.log("User Exist in database");
+    // console.log("UserData", userData);
+    // res.json(userData);
+
+
+  }catch (error) {
+    console.error('Something Went Wrong', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 // Use body-parser middleware to parse JSON bodies
@@ -92,7 +144,7 @@ app.get('/Dashboard/studentdata', async (req, res) => {
 // const dbURI='mongodb://localhost:27017/Company/' 
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/Students")
+mongoose.connect("mongodb://localhost:27017/Final_Year_Project")
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 

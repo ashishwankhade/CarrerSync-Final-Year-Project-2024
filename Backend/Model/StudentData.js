@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //we are creating schema
 
-const userSchema = new mongoose.Schema({
+const StudentSchema = new mongoose.Schema({
   SN: {
     type: Number,
     req: true,
@@ -174,6 +174,6 @@ const userSchema = new mongoose.Schema({
 //creating "models" now
 
 //collection ch nav lastla
-const Timepass = mongoose.model("Timepass", userSchema);
+const StudentData = mongoose.model("StudentData", StudentSchema);
 
-module.exports = Timepass;
+module.exports = StudentData;
